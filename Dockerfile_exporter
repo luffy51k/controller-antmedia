@@ -1,0 +1,18 @@
+FROM python:3.7
+
+RUN apt-get update && apt-get install -y supervisor tzdata
+ENV TZ="Asia/Ho_Chi_Minh"
+
+WORKDIR /app
+
+COPY observability/ .
+
+# set environment variables
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
+# install python dependencies
+RUN pip install --upgrade pip
+RUN pip install --no-cache-dir -r requirements.txt
+EXPOSE 9877
+CMD ["python", "exporter.py"]

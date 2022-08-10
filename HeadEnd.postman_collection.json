@@ -1,0 +1,384 @@
+{
+	"info": {
+		"_postman_id": "fbcce906-288e-42a7-809b-16fe66aef9ac",
+		"name": "HeadEnd",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create New Stream",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"hlsViewerCount\": 0,\r\n    \"webRTCViewerCount\": 0,\r\n    \"rtmpViewerCount\": 0,\r\n    \"mp4Enabled\": 0,\r\n    \"playListItemList\": [],\r\n    \"name\": \"testStream\",\r\n    \"type\": \"liveStream\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/app/{{app_name}}/stream/create",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"app",
+						"{{app_name}}",
+						"stream",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Stop Stream",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/app/{app_name}/stream/{stream_id}/stop",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"app",
+						"{app_name}",
+						"stream",
+						"{stream_id}",
+						"stop"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Start Stream",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/app/{{app_name}}/stream/{{stream_id}}/stop",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"app",
+						"{{app_name}}",
+						"stream",
+						"{{stream_id}}",
+						"stop"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create New App",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"TestAPP\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/app/create",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"app",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Stream",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/app/{{app_name}}/stream/{{stream_name}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"app",
+						"{{app_name}}",
+						"stream",
+						"{{stream_name}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete App",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/app/{{app_name}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"app",
+						"{{app_name}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Bulk Stream",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"streams\": [\"595577393681673645071874\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/app/{{app_name}}/stream/bulk",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"app",
+						"{{app_name}}",
+						"stream",
+						"bulk"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Apps",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/app/lists",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"app",
+						"lists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Streams",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/app/{{app_name}}/streams",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"app",
+						"{{app_name}}",
+						"streams"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Stream Detail",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/app/{{app_name}}/stream/{{stream_id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"app",
+						"{{app_name}}",
+						"stream",
+						"{{stream_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get App Settings",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/app/{{app_name}}/settings",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"app",
+						"{{app_name}}",
+						"settings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update App Settings",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"aacEncodingEnabled\": true,\r\n        \"acceptOnlyRoomsInDataStore\": false,\r\n        \"acceptOnlyStreamsInDataStore\": false,\r\n        \"addDateTimeToMp4FileName\": false,\r\n        \"allowedPublisherCIDR\": null,\r\n        \"appName\": \"toanb2s\",\r\n        \"audioBitrateSFU\": 96000,\r\n        \"collectSocialMediaActivity\": false,\r\n        \"constantRateFactor\": \"23\",\r\n        \"createPreviewPeriod\": 5000,\r\n        \"dashExtraWindowSize\": \"5\",\r\n        \"dashFragmentDuration\": \"0.5\",\r\n        \"dashHttpEndpoint\": null,\r\n        \"dashHttpStreaming\": true,\r\n        \"dashMuxingEnabled\": false,\r\n        \"dashSegDuration\": \"6\",\r\n        \"dashWindowSize\": \"5\",\r\n        \"dataChannelEnabled\": false,\r\n        \"dataChannelPlayerDistribution\": \"all\",\r\n        \"dataChannelWebHook\": null,\r\n        \"defaultDecodersEnabled\": false,\r\n        \"deleteDASHFilesOnEnded\": true,\r\n        \"deleteHLSFilesOnEnded\": true,\r\n        \"disableIPv6Candidates\": true,\r\n        \"enableTimeTokenForPlay\": false,\r\n        \"enableTimeTokenForPublish\": false,\r\n        \"encoderLevel\": null,\r\n        \"encoderName\": null,\r\n        \"encoderPreset\": null,\r\n        \"encoderProfile\": null,\r\n        \"encoderRc\": null,\r\n        \"encoderSelectionPreference\": \"'gpu_and_cpu'\",\r\n        \"encoderSettings\": [],\r\n        \"encoderSettingsString\": \"\",\r\n        \"encoderSpecific\": null,\r\n        \"encoderThreadCount\": 0,\r\n        \"encoderThreadType\": 0,\r\n        \"encodingTimeout\": 5000,\r\n        \"endpointHealthCheckPeriodMs\": 2000,\r\n        \"endpointRepublishLimit\": 3,\r\n        \"excessiveBandwidthAlgorithmEnabled\": false,\r\n        \"excessiveBandwidthCallThreshold\": 3,\r\n        \"excessiveBandwidthValue\": 300000,\r\n        \"excessiveBandwithTryCountBeforeSwitchback\": 4,\r\n        \"forceAspectRatioInTranscoding\": false,\r\n        \"forceDecoding\": false,\r\n        \"generatePreview\": false,\r\n        \"gopSize\": 0,\r\n        \"h264Enabled\": true,\r\n        \"h265Enabled\": false,\r\n        \"h265EncoderLevel\": null,\r\n        \"h265EncoderPreset\": null,\r\n        \"h265EncoderProfile\": null,\r\n        \"h265EncoderRc\": null,\r\n        \"h265EncoderSpecific\": null,\r\n        \"hashControlPlayEnabled\": false,\r\n        \"hashControlPublishEnabled\": false,\r\n        \"heightRtmpForwarding\": 360,\r\n        \"hlsEnabledViaDash\": false,\r\n        \"hlsEncryptionKeyInfoFile\": null,\r\n        \"hlsFlags\": \"delete_segments\",\r\n        \"hlsListSize\": \"5\",\r\n        \"hlsMuxingEnabled\": true,\r\n        \"hlsPlayListType\": \"\",\r\n        \"hlsTime\": \"2\",\r\n        \"httpForwardingBaseURL\": \"''\",\r\n        \"httpForwardingExtension\": \"''\",\r\n        \"ingestingStreamLimit\": -1,\r\n        \"ipFilterEnabled\": true,\r\n        \"jwksURL\": null,\r\n        \"jwtControlEnabled\": false,\r\n        \"jwtSecretKey\": null,\r\n        \"jwtStreamSecretKey\": null,\r\n        \"lLDashEnabled\": true,\r\n        \"lLHLSEnabled\": false,\r\n        \"listenerHookURL\": \"\",\r\n        \"maxAnalyzeDurationMS\": 1500,\r\n        \"maxResolutionAccept\": 0,\r\n        \"mp4MuxingEnabled\": false,\r\n        \"muxerFinishScript\": \"\",\r\n        \"mySqlClientPath\": \"/usr/local/antmedia/mysql\",\r\n        \"objectDetectionEnabled\": false,\r\n        \"packetLossDiffThresholdForSwitchback\": 10,\r\n        \"playJwtControlEnabled\": false,\r\n        \"playTokenControlEnabled\": false,\r\n        \"portAllocatorFlags\": 0,\r\n        \"previewHeight\": 480,\r\n        \"previewOverwrite\": false,\r\n        \"publishJwtControlEnabled\": false,\r\n        \"publishTokenControlEnabled\": false,\r\n        \"remoteAllowedCIDR\": \"127.0.0.1\",\r\n        \"replaceCandidateAddrWithServerAddr\": false,\r\n        \"restartStreamFetcherPeriod\": 0,\r\n        \"rtmpIngestBufferTimeMs\": 0,\r\n        \"rtspPullTransportType\": \"tcp\",\r\n        \"rtspTimeoutDurationMs\": 5000,\r\n        \"rttMeasurementDiffThresholdForSwitchback\": 20,\r\n        \"s3AccessKey\": null,\r\n        \"s3BucketName\": null,\r\n        \"s3Endpoint\": null,\r\n        \"s3Permission\": \"public-read\",\r\n        \"s3PreviewsFolderPath\": \"previews\",\r\n        \"s3RecordingEnabled\": false,\r\n        \"s3RegionName\": null,\r\n        \"s3SecretKey\": null,\r\n        \"s3StorageClass\": \" STANDARD\",\r\n        \"s3StreamsFolderPath\": \"streams\",\r\n        \"stalkerDBPassword\": \"\",\r\n        \"stalkerDBServer\": \"\",\r\n        \"stalkerDBUsername\": \"\",\r\n        \"startStreamFetcherAutomatically\": true,\r\n        \"streamFetcherBufferTime\": 0,\r\n        \"stunServerURI\": \"stun:stun1.l.google.com:19302\",\r\n        \"targetLatency\": \"3.5\",\r\n        \"timeTokenPeriod\": 60,\r\n        \"timeTokenSubscriberOnly\": false,\r\n        \"toBeDeleted\": false,\r\n        \"tokenHashSecret\": \"\",\r\n        \"updateTime\": 0,\r\n        \"uploadExtensionsToS3\": 7,\r\n        \"useOriginalWebRTCEnabled\": false,\r\n        \"useTimelineDashMuxing\": false,\r\n        \"vodFolder\": \"\",\r\n        \"vp8Enabled\": true,\r\n        \"vp8EncoderDeadline\": \"realtime\",\r\n        \"vp8EncoderSpeed\": 4,\r\n        \"vp8EncoderThreadCount\": 1,\r\n        \"webMMuxingEnabled\": false,\r\n        \"webRTCClientStartTimeoutMs\": 5000,\r\n        \"webRTCEnabled\": true,\r\n        \"webRTCFrameRate\": 50,\r\n        \"webRTCKeyframeTime\": 2000,\r\n        \"webRTCPortRangeMax\": 60000,\r\n        \"webRTCPortRangeMin\": 50000,\r\n        \"webRTCSdpSemantics\": \"unifiedPlan\",\r\n        \"webRTCTcpCandidatesEnabled\": false,\r\n        \"webRTCViewerLimit\": -1,\r\n        \"webhookAuthenticateURL\": \"\",\r\n        \"writeStatsToDatastore\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/app/{{app_name}}/settings",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"app",
+						"{{app_name}}",
+						"settings"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "{app_name}",
+			"value": "toanb2s"
+		}
+	]
+}

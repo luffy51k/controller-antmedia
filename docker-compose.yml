@@ -1,0 +1,60 @@
+version: '3.8'
+services:
+  headend-app:
+    container_name: headend_app
+    restart: always
+    env_file: .env
+    build: .
+    networks:
+      - headend_network
+    ports:
+      - "5000:5000"
+    depends_on:
+      - redis
+  redis:
+    image: redis
+    hostname: redis
+    networks:
+      - headend_network
+#  flower:
+#    image: mher/flower
+#    environment:
+#      - CELERY_BROKER_URL=redis://redis:6379/0
+#      - FLOWER_PORT=8888
+#      - FLOWER_BASIC_AUTH=admin:evg123312
+#    ports:
+#      - "8888:8888"
+#    networks:
+#      - headend_network
+#  headend-app-exporter:
+#    container_name: headend_app_exporter
+#    restart: always
+#    env_file: .env_exporter
+#    build:
+#      context: .
+#      dockerfile: Dockerfile_exporter
+#    networks:
+#      - headend_network
+#    ports:
+#      - "9877:9877"
+#    depends_on:
+#      - headend-app
+#  prometheus:
+#    image: prom/prometheus
+#    volumes:
+#      - ./observability/prometheus.yml:/etc/prometheus/prometheus.yml
+#    ports:
+#      - "9090:9090"
+#    networks:
+#      - headend_network
+#  grafana:
+#    image: grafana/grafana
+#    depends_on:
+#      - prometheus
+#    ports:
+#      - "3000:3000"
+#    networks:
+#      - headend_network
+networks:
+  headend_network:
+ 
