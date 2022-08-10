@@ -89,7 +89,7 @@ def api_wss_auth():
             return make_response(msg, 400)
         token = token_param[1]
 
-        verified, data = StreamAuthentication().verify_link_livestream(stream_id, token)
+        verified, data = StreamAuthentication().verify_link_livestream(stream_id, token, action='liveStreamStarted')
         if not verified:
             msg = f'api_wss_auth: authentication failed. stream_id: {stream_id}, token: {token}. Resp: {data.to_json()}'
             app.logger.warning(msg)

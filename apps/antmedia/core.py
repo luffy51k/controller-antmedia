@@ -381,7 +381,7 @@ class EventManager:
 class StreamAuthentication:
 
     @staticmethod
-    def verify_link_livestream(stream_id: str, token: str, action: str) -> (bool, StreamAuthResp):
+    def verify_link_livestream(stream_id: str, token: str, action=None) -> (bool, StreamAuthResp):
         """Verify livestream link that client push to and init the new session history"""
         try:
             livestream = LiveStream.query.filter_by(stream_id=stream_id, publish_token=token, deleted=0).first()
